@@ -8,9 +8,8 @@ function Anime (){
 
         const result = await fetch('https://ghibliapi.herokuapp.com/films')
         const data = await result.json()
-        // console.log(data)
         setAnime(data)
-
+        console.log(anime)
     }
 
     useEffect(() => {
@@ -21,9 +20,7 @@ function Anime (){
         <div>
             <h1>Anime Films</h1>
             <h2>Featured Film of the Month</h2>
-            <h3>{anime[0].title}</h3>
-            <p>{anime[0].release_date}</p>
-            <p>{anime[0].description}</p>
+
             {
                 anime.map( film => {
                     return <>

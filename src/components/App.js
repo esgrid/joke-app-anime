@@ -7,11 +7,8 @@ function App() {
   const getJokes = async () => {
 
     const result = await fetch('https://v2.jokeapi.dev/joke/Programming?amount=10&safe-mode')
-    const data = await result.json()
-    // const {jokes: data} = await result.json()
-    // setJokes(data)
-    setJokes(data.jokes)
-    console.log(data.jokes)
+    const jokes = await result.json()
+    setJokes(jokes.jokes)
 
   }
 
